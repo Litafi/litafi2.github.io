@@ -29,15 +29,14 @@ The steps to set this up in AWS is simple. Steps to follow are:
 			hours**. 
 
 After registering your domain, implement the following steps:
-	
-	- add your domain name to CNAME file in one of two ways: 
-	- via navigating to `Github Repo > Settings > Pages > Custom domain`
-	- or cd'ing into the root of you repository and running:
-		- `touch CNAME && echo "www.domain_name.com">>CNAME` 
-	- Ensure that **Enforce HTTPS** is checked under `Settings > Pages`
-	- Head to Route53 in AWS
-		- selected hosted zone for the domain in question
-		- click **create record**
-		- fill out the fields to match the image below: 
-			- [cname image](cname_aws_image.png)
+- add your domain name to CNAME file in one of two ways: 
+- via navigating to `Github Repo > Settings > Pages > Custom domain`
+- or cd'ing into the root of you repository and running:
+	- `touch CNAME && echo "www.domain_name.com">>CNAME` 
+- Ensure that **Enforce HTTPS** is checked under `Settings > Pages`
+- Head to Route53 in AWS
+	- selected hosted zone for the domain in question
+	- click **create record**
+	- fill out the fields to match the image below: 
+		- [cname image](cname_aws_image.png)
 
