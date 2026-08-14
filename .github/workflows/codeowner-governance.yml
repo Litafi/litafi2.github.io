@@ -1,4 +1,4 @@
-name: Policy · CODEOWNER Governance
+name: Governance · CODEOWNERS
 
 on:
   pull_request:
@@ -12,4 +12,4 @@ permissions:
 
 jobs:
   governance:
-    uses: Litafi/.github/.github/workflows/codeowner-governance.yml@main
+    uses: Litafi/.github/.github/workflows/governance-codeowners.yml@main
