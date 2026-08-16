@@ -11,5 +11,24 @@ permissions:
   pull-requests: read
 
 jobs:
-  governance:
+  evaluate:
+    name: Evaluate CODEOWNER Governance
     uses: Litafi/.github/.github/workflows/governance-codeowners.yml@main
+
+  policy:
+    name: Policy · CODEOWNER Governance
+    if: ${{ always() }}
+    needs: evaluate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require CODEOWNER evaluation success
+        shell: bash
+        env:
+          EVALUATION_RESULT: ${{ needs.evaluate.result }}
+        run: |
+          set -euo pipefail
+          if [[ "$EVALUATION_RESULT" != "success" ]]; then
+            echo "::error::CODEOWNER evaluation result is ${EVALUATION_RESULT}."
+            exit 1
+          fi
+          echo "CODEOWNER governance passed."
